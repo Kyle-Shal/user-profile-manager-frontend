@@ -7,7 +7,7 @@
     <title>Users Frontend</title>
     <style></style>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.8/dist/js/uikit.min.js"></script>
-    <script src="posts.js"></script>
+    <script src="users.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/uikit@3.8/dist/css/uikit.min.css">
 </head>
 <body>
@@ -36,23 +36,27 @@
                     <div class="uk-margin">
                         <input class="uk-input uk-form-width-large uk-form-large" type="text" placeholder="Password" aria-label="Large">
                     </div>
-                    <button>Add User</button>
+                    <button class="uk-button uk-button-secondary">Add User</button>
                     <!-- Add Button
                     Take Data From button and submit to endpoint -->
                 </form>
             </div>
         </div>
-        <div id="Results" class="uk-section uk-section-default">
+        <div class="uk-section uk-section-default">
             <div class="uk-container uk-text-center">
                 <H2>Current Users in the Database</H2>
-                <!-- Display Users Here Using a JS Function -->
             </div>
         </div>
+        <div id="users-container"></div>
+
     </body>
     <Footer class="uk-section uk-section-secondary">
         <div class="uk-container uk-text-center">
             <p>Created by Kyle Shal</p>
         </div>
     </Footer>
+    <script>
+        listUsers("users-container");
+    </script>
 </body>
 </html>
