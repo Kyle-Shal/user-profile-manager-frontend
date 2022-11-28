@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users Frontend</title>
+    <style></style>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.8/dist/js/uikit.min.js"></script>
+    <script src="posts.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/uikit@3.8/dist/css/uikit.min.css">
+</head>
+<body>
+    <header class="uk-section uk-section-secondary">
+        <div class="uk-container uk-text-center">
+            <h1>A Basic Frontend to Display <span style="color: blue;">MUNster</span> User Data</h1>
+        </div>
+    </header>
+    <body style="min-height: 100vh;">
+        <div id="form" class="uk-section uk-section-primary">
+            <div class="uk-container">
+                <H2 class="uk-text-center">A Form to Add a New User to the Database</H2>
+                <form class="uk-text-center">
+
+                    <div class="uk-margin">
+                        <input class="uk-input uk-form-width-large uk-form-large" type="text" placeholder="Given Name" aria-label="Large">
+                    </div>
+                
+                    <div class="uk-margin">
+                        <input class="uk-input uk-form-width-large uk-form-large" type="text" placeholder="Last Name" aria-label="Large">
+                    </div>
+                
+                    <div class="uk-margin">
+                        <input class="uk-input uk-form-width-large uk-form-large" type="email" placeholder="Email" aria-label="Large">
+                    </div>
+                    <div class="uk-margin">
+                        <input class="uk-input uk-form-width-large uk-form-large" type="text" placeholder="Password" aria-label="Large">
+                    </div>
+                    <button>Add User</button>
+                    <!-- Add Button
+                    Take Data From button and submit to endpoint -->
+                </form>
+            </div>
+        </div>
+        <div id="Results" class="uk-section uk-section-default">
+            <div class="uk-container uk-text-center">
+                <H2>Current Users in the Database</H2>
+                <!-- Display Users Here Using a JS Function -->
+            </div>
+        </div>
+    </body>
+    <Footer class="uk-section uk-section-secondary">
+        <div class="uk-container uk-text-center">
+            <p>Created by Kyle Shal</p>
+        </div>
+    </Footer>
+</body>
+</html>
