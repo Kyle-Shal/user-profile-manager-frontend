@@ -6,7 +6,7 @@ const apiURL = "https://munster-profilemanager-api-5tgazausrq-uc.a.run.app";
 // Function to get users in JSON format and print any errors to the console
 async function fetchUsers() {
   try {
-    const response = await fetch(`${apiURL}/getusers`);
+    const response = await fetch(`${apiURL}/`);
 
     if (!response.ok) {
       throw new Error(`Failed to fetch users: ${response.status}`);
