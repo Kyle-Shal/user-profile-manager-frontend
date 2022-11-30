@@ -31,7 +31,7 @@ function listUsers(userContainerElementId) {
         return;
       }
       console.log(users);
-      for (const user of users.msg) {
+      for (const user of users.data) {
         userContainerElement.appendChild(postElement(user));
       }
     })
