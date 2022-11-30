@@ -1,5 +1,5 @@
-const apiURL = "https://munster-profilemanager-api-5tgazausrq-uc.a.run.app";
-// const apiURL = "http://localhost:8000";
+// const apiURL = "https://munster-profilemanager-api-5tgazausrq-uc.a.run.app";
+const apiURL = "http://127.0.0.1:8000";
 // Function to get users in JSON format and print any errors to the console
 async function fetchUsers() {
   try {
@@ -49,4 +49,28 @@ function postElement(user) {
   userTitleElement.appendChild(anchorElement);
 
   return userTitleElement;
+}
+
+async function SendJson() {
+  const myForm = document.getElementById("myForm");
+
+  // Only uncomment this line to prevent page refreshing
+
+  // myForm.addEventListener("submit", function (e) {
+  //   e.preventDefault();
+  // });
+
+  const formData = new FormData(myForm);
+  console.log("Sending data");
+  let data = Object.fromEntries(formData);
+  console.log(data);
+
+  let res = await fetch(`${apiURL}/`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+  console.log(res);
 }

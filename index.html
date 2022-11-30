@@ -17,26 +17,26 @@
         </div>
     </header>
     <body style="min-height: 100vh;">
-        <div id="form" class="uk-section uk-section-primary">
+        <div class="uk-section uk-section-primary">
             <div class="uk-container">
                 <H2 class="uk-text-center">A Form to Add a New User to the Database</H2>
-                <form class="uk-text-center">
+                <form  id="myForm" class="uk-text-center">
 
                     <div class="uk-margin">
-                        <input class="uk-input uk-form-width-large uk-form-large" type="text" placeholder="Given Name" aria-label="Large">
+                        <input class="uk-input uk-form-width-large uk-form-large" id="given_name" name="given_name" type="text" placeholder="Given Name" aria-label="Large">
                     </div>
                 
                     <div class="uk-margin">
-                        <input class="uk-input uk-form-width-large uk-form-large" type="text" placeholder="Last Name" aria-label="Large">
+                        <input class="uk-input uk-form-width-large uk-form-large" id="last_name" name="last_name" type="text" placeholder="Last Name" aria-label="Large">
                     </div>
                 
                     <div class="uk-margin">
-                        <input class="uk-input uk-form-width-large uk-form-large" type="email" placeholder="Email" aria-label="Large">
+                        <input class="uk-input uk-form-width-large uk-form-large" id="email" name="email" type="email" placeholder="Email" aria-label="Large">
                     </div>
                     <div class="uk-margin">
-                        <input class="uk-input uk-form-width-large uk-form-large" type="text" placeholder="Password" aria-label="Large">
+                        <input class="uk-input uk-form-width-large uk-form-large" id="password" name="password" type="text" placeholder="Password" aria-label="Large">
                     </div>
-                    <button class="uk-button uk-button-secondary">Add User</button>
+                    <button class="uk-button uk-button-secondary" onclick="SendJson()" type="submit">Add User</button>
                     <!-- Add Button
                     Take Data From button and submit to endpoint -->
                 </form>
@@ -57,6 +57,13 @@
     </Footer>
     <script>
         listUsers("users-container");
+        
+        // const myForm = document.getElementById('myForm');
+        // myForm.addEventListener('submit', function (e){
+        //     e.preventDefault();
+        //     const formData = new FormData(this);
+        //     console.log(formData.entries());
+        // });
     </script>
 </body>
 </html>
