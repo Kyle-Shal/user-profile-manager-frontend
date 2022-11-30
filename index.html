@@ -19,8 +19,12 @@
     <body style="min-height: 100vh;">
         <div class="uk-section uk-section-primary">
             <div class="uk-container">
-                <H2 class="uk-text-center">A Form to Add a New User to the Database</H2>
+                <H2 class="uk-text-center">A Form to Add a New User to the Database (Registration)</H2>
                 <form  id="myForm" class="uk-text-center">
+
+                    <div class="uk-margin">
+                        <input class="uk-input uk-form-width-large uk-form-large" id="username" name="username" type="text" placeholder="Username" aria-label="Large">
+                    </div>
 
                     <div class="uk-margin">
                         <input class="uk-input uk-form-width-large uk-form-large" id="given_name" name="given_name" type="text" placeholder="Given Name" aria-label="Large">
@@ -36,7 +40,7 @@
                     <div class="uk-margin">
                         <input class="uk-input uk-form-width-large uk-form-large" id="password" name="password" type="text" placeholder="Password" aria-label="Large">
                     </div>
-                    <button class="uk-button uk-button-secondary" onclick="SendJson()" type="submit">Add User</button>
+                    <button class="uk-button uk-button-secondary" onclick="SendJson()" type="submit">Sign Up</button>
                     <!-- Add Button
                     Take Data From button and submit to endpoint -->
                 </form>
@@ -46,6 +50,21 @@
             <div class="uk-container uk-text-center">
                 <H2>Current Users in the Database</H2>
                 <div id="users-container"></div>
+            </div>
+        </div>
+        <div class="uk-section uk-section-primary">
+            <div class="uk-container">
+                <H2 class="uk-text-center">A Form To Test User Login</H2>
+                <form  id="loginForm" class="uk-text-center">
+                    <div class="uk-margin">
+                        <input class="uk-input uk-form-width-large uk-form-large" id="username" name="username" type="text" placeholder="Username" aria-label="Large">
+                    </div>
+                    <div class="uk-margin">
+                        <input class="uk-input uk-form-width-large uk-form-large" id="password" name="password" type="text" placeholder="Password" aria-label="Large">
+                    </div>
+                    <button class="uk-button uk-button-secondary" onclick="login()" type="submit">Login</button>
+                </form>
+                <div id="login-info"></div>
             </div>
         </div>
 

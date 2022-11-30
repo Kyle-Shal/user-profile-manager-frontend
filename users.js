@@ -6,7 +6,7 @@ const apiURL = "https://munster-profilemanager-api-5tgazausrq-uc.a.run.app";
 // Function to get users in JSON format and print any errors to the console
 async function fetchUsers() {
   try {
-    const response = await fetch(`${apiURL}`);
+    const response = await fetch(`${apiURL}/getusers`);
 
     if (!response.ok) {
       throw new Error(`Failed to fetch users: ${response.status}`);
@@ -23,7 +23,6 @@ function listUsers(userContainerElementId) {
   if (!userContainerElement) {
     return;
   }
-  console.log("sdfsdf");
 
   fetchUsers()
     .then((users) => {
@@ -68,7 +67,7 @@ async function SendJson() {
   let data = Object.fromEntries(formData);
   console.log(data);
 
-  let res = await fetch(`${apiURL}/`, {
+  let res = await fetch(`${apiURL}/signup`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -76,4 +75,38 @@ async function SendJson() {
     body: JSON.stringify(data),
   });
   console.log(res);
+}
+
+async function authenticate() {
+  const myForm = document.getElementById("loginForm");
+
+  // Only uncomment this line to prevent page refreshing
+
+  myForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+  });
+
+  const formData = new FormData(myForm);
+  console.log("Sending data");
+  let data = Object.fromEntries(formData);
+  console.log(data);
+
+  let res = await fetch(`${apiURL}/login`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+  return await res.json();
+}
+
+async function login() {
+  authenticate()
+    .then((users) => {
+      console.log(users);
+    })
+    .catch((e) => {
+      console.log(e);
+    });
 }
