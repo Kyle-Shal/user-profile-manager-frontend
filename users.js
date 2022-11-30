@@ -1,5 +1,5 @@
 const apiURL = "https://munster-profilemanager-api-5tgazausrq-uc.a.run.app";
-
+// const apiURL = "http://localhost:8000";
 // Function to get users in JSON format and print any errors to the console
 async function fetchUsers() {
   try {
@@ -18,9 +18,6 @@ function listUsers(userContainerElementId) {
   const userContainerElement = document.getElementById(userContainerElementId);
   // return if empty
   if (!userContainerElement) {
-    console.log(userContainerElement);
-    console.log("stop here");
-
     return;
   }
   console.log("sdfsdf");
@@ -31,7 +28,8 @@ function listUsers(userContainerElementId) {
         userContainerElement.innerHTML = "No Users fetched";
         return;
       }
-      for (const user of users) {
+      console.log(users);
+      for (const user of users.msg) {
         userContainerElement.appendChild(postElement(user));
       }
     })
@@ -45,7 +43,7 @@ function postElement(user) {
 
   anchorElement.setAttribute("href", `${apiURL}/${user.id}`);
   anchorElement.setAttribute("target", "_blank");
-  anchorElement.innerText = user.id;
+  anchorElement.innerText = user.given_name;
 
   const userTitleElement = document.createElement("h3");
   userTitleElement.appendChild(anchorElement);
